@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="f.css">
+    <title>Форма Заказа</title>
+</head>
+<body>
+    <h1>ЗАО Птицефабрика №1</h1>
+        <form action="/sendToExcel" method="post">
+        <div class="form-group">
+            <label for="lastname">Фамилия:</label>
+            <input type="text" id="lastname" name="lastname" pattern="[А-Яа-яЁё]+$" title="Только буквы">
+        </div>
+        <div class="form-group">
+            <label for="initials">Инициалы:</label>
+            <input type="text" id="initial" name="initial" pattern="[А-ЯЁ]\.[А-ЯЁ]\." >
+        </div>
+        <div class="form-group">
+            <label for="password">Пароль:</label>
+            <input type="password" id="password" name="password" required >
+        </div>
+        <div class="form-group">
+            <label for="address">Адрес получателя:</label>
+            <input type="text" id="address" name="address" >
+        </div>
+        <div class="form-group">
+            <label for="quantity">Количество:</label>
+            <input type="number" id="quantity" name="quantity" >
+        </div>
+        <div class="form-group">
+            <label>Тип:</label>
+            <select id="type1" name="type1">%
+                <option value="Куриные" name = "Куринные" selected>Куриные</option>%
+                <option value="Перепелиные" name = "Перепелиные">Перепелиные</option>%
+            </select>
+            <select id="type2" name="type2">%
+                <option value="Стандартные" selected>Стандартные</option>%
+                <option value="Отборные">Отборные</option>%
+            </select>
+        </div>
+        <div class="form-group">
+            <label for ="dostavka">Доставка:</label>
+          <input type="radio" id="radio" value="Почтой" name="user_age"><label for="under_16" class="light">Почтой</label>
+          <input type="radio" id="radio" value="Электронно" name="user_age"><label for="over_16" class="light">Электронно</label>
+          <input type="radio" id="radio" value="Курьером" name="user_age"><label for="under_16" class="light">Курьером</label><br>
+        </div>
+        <div class="form-group">
+            <label for="invoice_required">Требуется накладная:</label>
+            <input type="checkbox" id="invoice-required" name="invoice">
+        </div>
+        <div class="form-group">
+            <label for="additional_info">Дополнительная информация:</label>
+            <textarea id="additional-info" name="info" rows="4"></textarea>
+        </div>
+        <div class="form-group">
+            <button type="submit" id="submit-button">Отправить</button>
+            <button type="reset" id="cancel-button">Отменить</button>
+        </div>
+    </form>
+
+    <script src="exportToExcel.js" type="module"></script>
+        
+        
+</body>
+</html>
