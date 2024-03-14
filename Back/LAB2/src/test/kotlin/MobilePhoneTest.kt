@@ -1,12 +1,14 @@
 import org.example.Contact
 import org.example.MobilePhone
+import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
+import org.slf4j.LoggerFactory
 
-import org.junit.jupiter.api.Assertions.*
 
 class MobilePhoneTest {
 
     private val phone: MobilePhone = MobilePhone("Ya", "65676")
+    private val logger = LoggerFactory.getLogger(Contact::class.java)
 
     @Test
     fun addNewContact() {
@@ -22,5 +24,6 @@ class MobilePhoneTest {
         val isRemove: Boolean = phone.removeContact(removeContact)
         assertEquals(true, isRemove)
         //assertTrue(isRemove)
+        logger.info("Я")
     }
 }
